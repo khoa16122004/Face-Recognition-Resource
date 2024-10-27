@@ -91,8 +91,8 @@ class LFW(Dataset):
         first_mask = self.transform(Image.open(first_mask_path))
         second_mask = self.transform(Image.open(second_mask_path))
                 
-        return first_image, second_image, first_mask, second_mask, label
-    
+        # return first_image, second_image, first_mask, second_mask, label
+        return first_image, second_image, label   
     
     
 class LFW_EVALUATION(Dataset):

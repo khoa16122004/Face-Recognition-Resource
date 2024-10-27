@@ -53,6 +53,6 @@ def evaluation(model, loader, transform=None, attack=None):
         sims = calculate_similarity(preds_1, preds_2)
         acc = accuracy_FR(sims, labels)
         test_acc.update(acc, img_1.shape[0])
-        break
+        # break
     print("Face Verification Acc: ", test_acc.avg)
     print(test_acc.count - test_acc.sum)
