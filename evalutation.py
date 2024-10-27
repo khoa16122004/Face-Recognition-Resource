@@ -39,14 +39,14 @@ def evaluation(model, loader, transform=None, attack=None):
     for (img_1, img_2, mask_1, mask_2, labels) in tqdm(loader):
         img_1, img_2, mask_1, mask_2, labels = img_1.cuda(), img_2.cuda(), mask_1.cuda(), mask_2.cuda(), labels.cuda()
         
-        if attack == "fill_lips":
-            img_1 = fill_lips(img_1, mask_1)
-            # save_image(img_1[0, :, :, :], "test.png")
-        elif attack == "color":
-            img_1 = color_aware_perturbation(img_1, mask_1, model)        
-        if transform:
-            img_1 = transform(img_1)
-            img_2 = transform(img_2)
+        # if attack == "fill_lips":
+        #     img_1 = fill_lips(img_1, mask_1)
+        #     # save_image(img_1[0, :, :, :], "test.png")
+        # elif attack == "color":
+        #     img_1 = color_aware_perturbation(img_1, mask_1, model)        
+        # if transform:
+        #     img_1 = transform(img_1)
+        #     img_2 = transform(img_2)
             
         preds_1 = model(img_1)
         preds_2 = model(img_2)
