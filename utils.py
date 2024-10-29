@@ -37,5 +37,5 @@ def get_predict(pred, threshold=0.5):
     if isinstance(pred, torch.Tensor):
         pred = pred.item()
     if (pred > threshold):
-        return 1
-    return 0
+        return 0
+    return 1
