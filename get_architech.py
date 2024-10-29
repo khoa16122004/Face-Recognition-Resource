@@ -6,15 +6,17 @@ import torchvision
 import torch.utils.model_zoo as modelzoo
 # from pySR import SymbolicRegressionModule
 resnet18_url = 'https://download.pytorch.org/models/resnet18-5c106cde.pth'
+base_dir = os.path.dirname(os.path.abspath(__file__)) if '__file__' in globals() else os.getcwd()
+
 
 def get_model(model_name):
     if model_name == "restnet_vggface":     
         model = InceptionResnetV1("vggface2")
-        cp_pack = "pretrained_model/vggface2.pt"
+        cp_pack = os.path.join(base_dir, 'pretrained_model', 'vggface2.pt')
         
     elif model_name == "restnet_webface":
         model =  InceptionResnetV1("casia-webface")
-        cp_pack = "pretrained_model/webface.pt"
+        cp_pack = os.path.join(base_dir, 'pretrained_model', 'webface.pt')
    
     elif model_name == "restnet_vggface_student":
         model = torch.load("pretrained_model/resnet_vggface_distill.pth")

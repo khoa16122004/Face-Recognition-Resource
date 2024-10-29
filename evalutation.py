@@ -3,14 +3,14 @@
 # from insightface.model_zoo import ArcFaceONNX
 # from sklearn.metrics.pairwise import cosine_similarity
 from tqdm import tqdm
-from dataset import LFW_EVALUATION, LFW
+# from dataset import LFW_EVALUATION, LFW
 import onnxruntime as ort
 # from mtcnn import MTCNN
 import numpy as np
-from get_architech import get_model
+from .get_architech import get_model
 from torch.utils.data import DataLoader
 import torch.nn.functional as F
-from utils import *
+from .utils import *
 import torch
 from torchvision.utils import save_image
 from torchvision import transforms
