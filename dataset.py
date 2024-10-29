@@ -8,7 +8,6 @@ import cv2 as cv
 import numpy as np
 import json
 from PIL import Image
-from insightface.utils.face_align import norm_crop
 from torchvision import transforms
 
 
