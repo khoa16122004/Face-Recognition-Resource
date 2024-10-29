@@ -36,8 +36,6 @@ def accuracy_FR(pred, labels, threshold=0.5):
 def get_predict(pred, threshold=0.5):
     if isinstance(pred, torch.Tensor):
         pred = pred.item()
-    print(pred, threshold)
-    print(type(pred), type(threshold))
     if (pred > threshold):
         return 1
     return 0
