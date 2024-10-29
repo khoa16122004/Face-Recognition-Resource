@@ -11,7 +11,6 @@ from get_architech import get_model
 from torch.utils.data import DataLoader
 import torch.nn.functional as F
 from utils import *
-from attack import *
 import torch
 from torchvision.utils import save_image
 from torchvision import transforms
