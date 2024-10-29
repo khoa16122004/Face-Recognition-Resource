@@ -32,3 +32,8 @@ def accuracy_FR(pred, labels, threshold=0.5):
     condition = ((pred > threshold) & (labels == 0)) | ((pred <= threshold) & (labels == 1))
     accuracy = condition.sum().item() / len(labels)
     return accuracy
+
+def get_predict(pred, threshold=0.5):
+    if (pred > threshold):
+        return 1
+    return 0
