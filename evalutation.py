@@ -1,16 +1,23 @@
+# from insightface.app import FaceAnalysis
+# from insightface.data import get_image as ins_get_image
+# from insightface.model_zoo import ArcFaceONNX
+# from sklearn.metrics.pairwise import cosine_similarity
 from tqdm import tqdm
 from dataset import LFW_EVALUATION, LFW
+import onnxruntime as ort
 # from mtcnn import MTCNN
 import numpy as np
 from get_architech import get_model
 from torch.utils.data import DataLoader
 import torch.nn.functional as F
 from utils import *
+from attack import *
 import torch
 from torchvision.utils import save_image
 from torchvision import transforms
 from PIL import Image, ImageDraw, ImageFont
 import pickle as pkl
+# from pySR import SymbolicRegressionModule
 from torchvision import models
 from torch import nn
 
@@ -49,5 +56,3 @@ def evaluation(model, loader, transform=None, attack=None):
         # break
     print("Face Verification Acc: ", test_acc.avg)
     print(test_acc.count - test_acc.sum)
-    
-z
