@@ -28,7 +28,7 @@ def accuracy_FR(pred, labels, threshold=0.5):
     Class 1: Difference indentity
     (sim > threshold and same indentity ) or (sim < threshold and difference indentity)
     '''
-
+    print(pred, labels)
     condition = ((pred > threshold) & (labels == 0)) | ((pred <= threshold) & (labels == 1))
     accuracy = condition.sum().item() / len(labels)
     return accuracy
